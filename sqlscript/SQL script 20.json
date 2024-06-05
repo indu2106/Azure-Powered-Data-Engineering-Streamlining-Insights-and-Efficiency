@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 20",
+	"properties": {
+		"content": {
+			"query": "SELECT stars, COUNT(*) AS review_count\nFROM Review\nGROUP BY stars\nORDER BY stars DESC;\n\n\nSELECT user_id, review_count\nFROM dbo.[User]\nORDER BY review_count DESC;\n\nSELECT ROUND(average_stars, 1) AS avg_stars, COUNT(*) AS user_count\nFROM dbo.[User]\nGROUP BY ROUND(average_stars, 1)\nORDER BY avg_stars;\n\nSELECT city, COUNT(*) AS total_businesses\nFROM business\nGROUP BY city;\n\nSELECT user_id, fans\nFROM dbo.[User]\nORDER BY fans DESC;\n\n\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "YelpData",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
