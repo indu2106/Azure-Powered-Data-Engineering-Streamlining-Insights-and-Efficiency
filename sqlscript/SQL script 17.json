@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 17",
+	"properties": {
+		"content": {
+			"query": "CREATE EXTERNAL TABLE [dbo].[User]\n(\n    [average_stars] FLOAT,\n    [compliment_cool] BIGINT,\n    [compliment_cute] BIGINT,\n    [compliment_funny] BIGINT,\n    [compliment_hot] BIGINT,\n    [compliment_list] BIGINT,\n    [compliment_more] BIGINT,\n    [compliment_note] BIGINT,\n    [compliment_photos] BIGINT,\n    [compliment_plain] BIGINT,\n    [compliment_profile] BIGINT,\n    [compliment_writer] BIGINT,\n    [cool] BIGINT,\n    [fans] BIGINT,\n    [friends] VARCHAR(MAX),\n    [funny] BIGINT,\n    [review_count] BIGINT,\n    [useful] BIGINT,\n    [user_id] VARCHAR(4000)\n)  \nWITH (\n    LOCATION = 'yelp_academic_dataset_user.parquet',\n    DATA_SOURCE = [gold-layer_saprojectdatalake_dfs_core_windows_net],\n    FILE_FORMAT = [SynapseParquetFormat]\n)",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "YelpData",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

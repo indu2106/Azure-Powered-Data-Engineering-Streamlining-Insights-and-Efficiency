@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 18",
+	"properties": {
+		"content": {
+			"query": "SELECT user_id, review_count\nFROM dbo.[User]\nORDER BY review_count DESC\n;\n\nSELECT ROUND(average_stars, 1) AS avg_stars, COUNT(*) AS user_count\nFROM dbo.[User]\nGROUP BY ROUND(average_stars, 1)\nORDER BY avg_stars;\n\nSELECT business_id, COUNT(*) AS checkin_count\nFROM dbo.Checkin\nGROUP BY business_id\nORDER BY checkin_count DESC;\n\nSELECT city, COUNT(*) AS total_businesses\nFROM dbo.Business\nGROUP BY city;\n\nSELECT DATEPART(year, date) AS year, DATEPART(month, date) AS month, COUNT(*) AS total_tips\nFROM tip\nGROUP BY DATEPART(year, date), DATEPART(month, date);\n\nSELECT TOP 10 user_id, AVG(stars) AS avg_stars_given\nFROM review\nGROUP BY user_id\nORDER BY AVG(stars) DESC;\n\nSELECT DISTINCT name, review_count\nFROM business\nORDER BY review_count DESC;\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "YelpData",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

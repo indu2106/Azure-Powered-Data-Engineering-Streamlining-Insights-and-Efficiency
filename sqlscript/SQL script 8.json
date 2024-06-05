@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 8",
+	"properties": {
+		"content": {
+			"query": "CREATE EXTERNAL TABLE dbo.Review (\n    [business_id] nvarchar(4000),\n    [cool] bigint,\n    [date] date,\n    [funny] bigint,\n    [review_id] nvarchar(4000),\n    [stars] FLOAT,\n    [useful] bigint,\n    [user_id] nvarchar(4000),\n    [cleaned_review] varchar(MAX)\n)  \nWITH (\n    LOCATION = 'yelp_academic_dataset_review.parquet',\n    DATA_SOURCE = [gold-layer_saprojectdatalake_dfs_core_windows_net],\n    FILE_FORMAT = [SynapseParquetFormat]\n)",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "YelpData",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

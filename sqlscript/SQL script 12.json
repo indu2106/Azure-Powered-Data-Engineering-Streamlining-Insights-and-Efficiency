@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 12",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [average_stars]\n,[compliment_cool]\n,[compliment_cute]\n,[compliment_funny]\n,[compliment_hot]\n,[compliment_list]\n,[compliment_more]\n,[compliment_note]\n,[compliment_photos]\n,[compliment_plain]\n,[compliment_profile]\n,[compliment_writer]\n,[cool]\n,[fans]\n,[friends]\n,[funny]\n,[review_count]\n,[useful]\n,[user_id]\n FROM [dbo].[User]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "YelpData",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

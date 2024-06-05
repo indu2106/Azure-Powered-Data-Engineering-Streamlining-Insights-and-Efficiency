@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 13",
+	"properties": {
+		"content": {
+			"query": "IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'SynapseParquetFormat') \n\tCREATE EXTERNAL FILE FORMAT [SynapseParquetFormat] \n\tWITH ( FORMAT_TYPE = PARQUET)\nGO\n\nIF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'gold-layer_saprojectdatalake_dfs_core_windows_net') \n\tCREATE EXTERNAL DATA SOURCE [gold-layer_saprojectdatalake_dfs_core_windows_net] \n\tWITH (\n\t\tLOCATION = 'abfss://gold-layer@saprojectdatalake.dfs.core.windows.net' \n\t)\nGO\n\nCREATE EXTERNAL TABLE dbo.Business (\n\t[business_id] varchar(4000),\n\t[categories] varchar(4000),\n\t[city] varchar(4000),\n\t[is_open] bigint,\n\t[latitude] float,\n\t[longitude] float,\n\t[name] varchar(4000),\n\t[postal_code] varchar(4000),\n\t[review_count] bigint,\n\t[stars] float,\n\t[state] varchar(4000)\n\t)\n\tWITH (\n\tLOCATION = 'yelp_academic_dataset_business.parquet',\n\tDATA_SOURCE = [gold-layer_saprojectdatalake_dfs_core_windows_net],\n\tFILE_FORMAT = [SynapseParquetFormat]\n\t)\nGO\n\n\nSELECT TOP 100 * FROM dbo.Business\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "YelpData",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

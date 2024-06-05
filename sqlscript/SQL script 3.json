@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 3",
+	"properties": {
+		"content": {
+			"query": "CREATE EXTERNAL TABLE dbo.checking\n(\n   [business_id] nvarchar(4000),\n    [date] nvarchar(MAX)\n\t\n)  \nWITH (\n    LOCATION = 'yelp_academic_dataset_checkin.parquet',\n\tDATA_SOURCE = [gold-layer_saprojectdatalake_dfs_core_windows_net],\n\tFILE_FORMAT = [SynapseParquetFormat]\n)\nGO\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "YelpData",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
