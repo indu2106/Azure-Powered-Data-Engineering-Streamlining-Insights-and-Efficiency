@@ -1,0 +1,7 @@
+{
+	"name": "onprem",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "File explorer connectivity"
+	}
+}

@@ -1,0 +1,50 @@
+{
+	"name": "reviewdataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "FileServer1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "yelp_academic_dataset_review.json"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"review_id": {
+					"type": "string"
+				},
+				"user_id": {
+					"type": "string"
+				},
+				"business_id": {
+					"type": "string"
+				},
+				"stars": {
+					"type": "number"
+				},
+				"useful": {
+					"type": "integer"
+				},
+				"funny": {
+					"type": "integer"
+				},
+				"cool": {
+					"type": "integer"
+				},
+				"text": {
+					"type": "string"
+				},
+				"date": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
