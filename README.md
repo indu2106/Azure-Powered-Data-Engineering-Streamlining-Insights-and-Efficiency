@@ -11,6 +11,7 @@
 This project demonstrates a comprehensive data engineering solution implemented on Microsoft Azure. The solution utilizes various Azure services to create a data pipeline, transforming raw data into meaningful insights through a series of well-defined stages. The project follows the Medallion Architecture for data organization and employs Azure Data Factory, Azure Databricks, Azure Synapse Analytics, and Power BI for data visualization.
 
 Yelp Dataset link : https://www.yelp.com/dataset
+Information on Yelp Datasets : https://www.yelp.com/dataset/documentation/main
 
 ## Architecture
 
