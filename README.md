@@ -3,13 +3,8 @@
 
 1. [Project Overview](#project-overview)
 2. [Architecture](#architecture)
-3. [Components](#components)
-    - [Azure Data Factory](#azure-data-factory)
-    - [Azure Databricks](#azure-databricks)
-    - [Azure Synapse Analytics](#azure-synapse-analytics)
-    - [Power BI](#power-bi)
-4. [Setup Instructions](#setup-instructions)
-5. [Execution](#execution)
+3. [Setup](#setup-instructions)
+4. [Execution](#execution)
 
 
 ## Project Overview
