@@ -31,7 +31,7 @@ The architecture of the solution follows the medallion architecture pattern:
 - **pySpark**: Utilized in Azure Databricks for data transformation.
 - **SQL**: Employed in Azure Synapse Analytics for creating external tables and querying analytics.
 
-![Architecture Diagram](path_to_architecture_diagra.png)
+![Architecture Diagram](Azure Architecture.png)
 
 ## Setup
 
