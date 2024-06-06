@@ -3,7 +3,7 @@
 
 1. [Project Overview](#project-overview)
 2. [Architecture](#architecture)
-3. [Setup](#setup-instructions)
+3. [Setup](#setup)
 4. [Execution](#execution)
 
 
