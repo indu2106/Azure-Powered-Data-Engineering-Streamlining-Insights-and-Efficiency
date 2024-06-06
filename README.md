@@ -9,9 +9,8 @@
     - [Azure Synapse Analytics](#azure-synapse-analytics)
     - [Power BI](#power-bi)
 4. [Setup Instructions](#setup-instructions)
-5. [Usage](#usage)
-6. [Contributing](#contributing)
-7. [License](#license)
+5. [Execution](#execution)
+
 
 ## Project Overview
 This project demonstrates a comprehensive data engineering solution implemented on Microsoft Azure. The solution utilizes various Azure services to create a data pipeline, transforming raw data into meaningful insights through a series of well-defined stages. The project follows the Medallion Architecture for data organization and employs Azure Data Factory, Azure Databricks, Azure Synapse Analytics, and Power BI for data visualization.
@@ -28,16 +27,16 @@ The architecture of the solution follows the medallion architecture pattern:
 
 - **Azure Data Factory**: Orchestrating and automating data pipelines.
 - **Azure Databricks**: Transforming and processing data using Apache Spark.
-- **Azure Synapse Analytics**: Data warehousing and analytics.
+- **Azure Synapse Analytics**: Data warehousing and analytics. Azure Synapse Analytics is used for data analysis and querying. It is used to create external tables in serveless SQL pool that references data in Azure Data Lake Gen2. It allows to query data in ADLS from serverless SQL pool without copying it. Any updates done in ADLS, the external table in SQL pool will reflect too. Serverless SQL pool is a query service you use to query data in Azure Data Lake.
 - **Azure Data Lake Storage Gen 2**: Storing data at different stages (Bronze, Silver, Gold).
 - **Power BI**: Visualizing and reporting data.
 
 ### Languages Used:
 
-**pySpark**: Utilized in Azure Databricks for data transformation.
-**SQL**: Employed in Azure Synapse Analytics for creating external tables and querying analytics.
+- **pySpark**: Utilized in Azure Databricks for data transformation.
+- **SQL**: Employed in Azure Synapse Analytics for creating external tables and querying analytics.
 
-![Architecture Diagram](path_to_architecture_diagram.png)
+![Architecture Diagram](path_to_architecture_diagra.png)
 
 ## Setup
 
@@ -65,7 +64,7 @@ The architecture of the solution follows the medallion architecture pattern:
    - Use databricks to connect to perform transformation on the data in teh workspace.
 5. Trigger the pipeline to run.
 
-### Azure Databricks
+#### Azure Databricks
 
 1. Create a Azure Databricks workspace.
 2. Use pyspark to do the following:
@@ -73,49 +72,21 @@ The architecture of the solution follows the medallion architecture pattern:
    - Data Transformation: Clean and process data, moving it to the Silver layer.
    - Data Aggregation: Refine and aggregate data, moving it to the Gold layer.
 
-### Azure Synapse Analytics
+#### Azure Synapse Analytics
 
-Azure Synapse Analytics is used for data analysis and querying. It is used to create external tables in serveless SQL pool that references data in Azure Data Lake Gen2. It allows to query data in ADLS from serverless SQL pool without copying it. Any updates done in ADLS, the external table in SQL pool will reflect too. Serverless SQL pool is a query service you use to query data in Azure Data Lake.
-
-1.Create Azure Synapse worspace.
+1. Create Azure Synapse worspace.
 2. Set up SQL pools(Dedicated or Severless SQL pools). This project uses Severless SQL pools.
 3. Data Lake Integration: Connect to ADLS and access data in the Gold layer.
 4. External Tables: Create external tables to query data stored in ADLS.
 5. SQL Queries: Run analytical SQL queries for data analysis.
 
-### Power BI
+#### Power BI
 
 1. Connect Power BI Desktop to Azure Synapse Analytics:
    - Get Data -> Azure -> Azure Synapse Analytics SQL.
    - Fill in SQL Server details(Got to Synapse workspace -> properties ->Copy Serveless SQL endpoint)-> Sign in to Miccrosoft Account to Connect to workspace.
    - Click and Load the data.
 2. Create interactive dashboards and reports.
-
-
-## Setup Instructions
-
-Prerequisites
-An active Azure subscription.
-Access to Azure Data Factory, Azure Databricks, Azure Synapse Analytics, Azure Data Lake Storage Gen 2, and Power BI.
-Basic knowledge of data engineering principles and Azure services.
-2. **Azure Data Factory Setup:**
-    - Configure Integration Runtime to connect the local system.
-    - Create linked services for Azure Databricks and ADLS.
-    - Define pipelines to automate data workflows.
-
-3. **Azure Databricks Setup:**
-    - Create a new Databricks workspace.
-    - Develop PySpark scripts for data transformation.
-    - Schedule notebooks to run via ADF.
-
-4. **Azure Synapse Analytics Setup:**
-    - Connect Synapse to ADLS.
-    - Create external tables for the Gold layer data.
-    - Develop and execute SQL queries for data analysis.
-
-5. **Power BI Setup:**
-    - Connect Power BI to Azure Synapse Analytics.
-    - Develop dashboards and reports for data visualization.
 
 ## Execution
 
